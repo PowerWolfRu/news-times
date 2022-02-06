@@ -4,7 +4,6 @@ import NewsCard from "../components/NewsCard/NewsCard";
 const News = () => {
     return (
         <div>
-            <NewsCard/>
         </div>
     );
 };
