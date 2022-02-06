@@ -9,8 +9,8 @@ body {
 }
 
 
-.navbar {
-    background-color: yellowgreen;
+.nav-bar {
+    background-color: #1a153f;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -83,12 +83,12 @@ body {
 
 .nav-item:hover:after {
     width: 100%;
-    background: #ffdd40;
+    background: white;
 }
 
 .nav-item.active {
-    color: #ffdd40;
-    border: 1px solid #ffdd40;
+    color: #082567;
+    border: 1px solid #082567;
 }
 
 .nav-icon {
@@ -110,14 +110,14 @@ body {
     }
 
     .nav-menu.active {
-        background: #1f5156;
+        background: #082567;
         left: 0px;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;
     }
     .nav-item .active {
-        color: #ffdd40;
+        color: red;
         border: none;
     }
     .nav-links {
@@ -134,6 +134,6 @@ body {
         transform: translate(-100%, 60%);
         font-size: 1.8rem;
         cursor: pointer;
-        color: #ffdd40;
+        color: white;
     }
 }

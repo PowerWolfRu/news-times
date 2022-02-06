@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sidebar .sidebar-item {
+    height: 30px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 10px;
+
+    margin: 20px;
+
+    background-color: #1a153f;
+
+    border-color: white;
+    border-radius: 10px;
+
+    color: white;
+
+    background-repeat: no-repeat no-repeat no-repeat;
+}

@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import "./ArticleItem.css";
+import {useNavigate} from "react-router-dom";
+import {Context} from "../../context";
 
-const ArticleItem = (props) => {
+const ArticleItem = ({article}) => {
+
+    const history = useNavigate();
 
     return (
-        <div className="post">
-            <h1>{props.post.title}</h1>
-            <div>{props.post.body}</div>
+        <div className="article-item">
+            <h2 className="title">{article.title}</h2>
+            <p className="description">{article.body}</p>
+            <span className="topic">{article.category.name}</span>
         </div>
     );
 };
