@@ -9,19 +9,13 @@ import { createArticle, getArticles, getCreators } from '../../API/ArticleAPI';
 const CreateArticle = observer(({show, onHide}) => {
     const {article} = useContext(Context)
     const [title, setTitle] = useState('')
-    const [body, setBody] = useState([])
+    const [body, setBody] = useState('')
 
     useEffect(() => {
         getArticles().then(data => article.setCategories(data))
         getCreators().then(data => article.setCreators(data))
     }, [])
 
-    const addBody = () => {
-        setBody([...body, {title: '', body: ''}])
-    }
-    const changeInfo = (value) => {
-        setBody(body.map(i => i.value === value ))
-    }
 
     const addArticle = () => {
         const formData = new FormData()
@@ -78,28 +72,20 @@ const CreateArticle = observer(({show, onHide}) => {
                         placeholder="Введите заголовок"
                     />
                     <hr/>
-                    <Button
-                        variant={"outline-dark"}
-                        onClick={addArticle}
-                    >
-                        Добавить новость
-                    </Button>
-                    {body.map(i =>
                         <Row className="mt-4">
                             <Col md={4}>
                                 <Form.Control
-                                    value={i.body}
-                                    onChange={(e) => changeInfo('body', e.target.value)}
-                                    placeholder="Введите описание свойства"
+                                    value={body}
+                                    onChange={(e) => setBody(e.target.value)}
+                                    placeholder="Введите текст"
                                 />
                             </Col>
                         </Row>
-                    )}
                 </Form>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="outline-danger" onClick={onHide}>Закрыть</Button>
-                <Button variant="outline-success" onClick={addBody}>Добавить</Button>
+                <Button variant="outline-success" onClick={addArticle}>Добавить</Button>
             </Modal.Footer>
         </Modal>
     );
